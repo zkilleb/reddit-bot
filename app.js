@@ -8,7 +8,7 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 
 function main() {
     //Post monthly stickied post
-    schedule.scheduleJob('* 0 1 * *', () => {
+    schedule.scheduleJob('0 0 1 * *', () => {
         let today = new Date();
         r.getSubreddit(subreddit).submitSelfpost({ title: `${postTitle} - ${months[today.getMonth()]} ${today.getFullYear()}`, text: '' })
             .sticky({ num: 1 }).distinguish().approve().assignFlair({ text: flair })
