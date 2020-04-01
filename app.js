@@ -12,7 +12,7 @@ function main() {
         let today = new Date();
         r.getSubreddit(subreddit).submitSelfpost({ title: `${postTitle} - ${months[today.getMonth()]} ${today.getFullYear()}`, text: '' })
             .sticky({ num: 1 }).distinguish().approve().assignFlair({ text: flair })
-            .reply(`This thread was automatically posted by /u/${botName}. For questions of problems, contact /u/${botOwner}.`);
+            .reply(`This thread was automatically posted by /u/${botName}. For questions or problems, contact /u/${botOwner}.`);
         console.log(`Monthly post posted at ${today} to ${subreddit}`);
     });
 
