@@ -21,3 +21,7 @@ module.exports = {
 };
 ```
 * Run npm start
+
+## TODOs
+
+* Handle Promise object returned when accessing author
