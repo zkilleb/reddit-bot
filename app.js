@@ -56,12 +56,16 @@ function main() {
     modQueue.forEach((report) => {
       tempString += report;
     });
-    r.composeMessage({
+    if(tempString === '') {
+      console.log(`No modqueue message sent on ${today}`);
+    } else {
+      r.composeMessage({
       to: botOwner,
       subject: `Modqueue ${today}`,
       text: tempString,
-    });
-    console.log(`Modqueue message sent at ${today} to ${botOwner}`);
+      });
+      console.log(`Modqueue message sent at ${today} to ${botOwner}`);
+    }
   });
 }
 
